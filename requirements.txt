@@ -1,0 +1,14 @@
+cbor2==5.4.3
+Deprecated==1.2.13
+ifaddr==0.2.0
+luma.core==2.3.1
+luma.oled==3.8.1
+Pillow==9.2.0
+psutil==5.9.3
+pyftdi==0.54.0
+pyserial==3.5
+pyusb==1.2.1
+RPi.GPIO==0.7.1
+smbus2==0.4.2
+spidev==3.5
+wrapt==1.14.1
