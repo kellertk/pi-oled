@@ -94,6 +94,8 @@ class LineGraph():
             # implement auto scaling
             self._historical_max = 0 if self._historical_max is None else max(self._historical_max, max(self._datapoints))
             quantize_y = 0 if self._historical_max == 0 else data_height / self._historical_max
+        elif self.max == 0:
+            quantize_y = 0
         else:
             quantize_y = data_height / self.max
         # plot the values
