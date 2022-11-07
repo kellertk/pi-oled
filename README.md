@@ -51,7 +51,7 @@ remote: Counting objects: 100% (23/23), done.
 remote: Compressing objects: 100% (20/20), done.
 remote: Total 23 (delta 3), reused 23 (delta 3), pack-reused 0
 Unpacking objects: 100% (23/23), done.
-$ sudo DEBIAN_FRONTEND=noninteractive apt-get -y -qq install python3-pip libopenjp7-2 > /dev/null
+$ sudo DEBIAN_FRONTEND=noninteractive apt-get -y -qq install python3-pip libopenjp2-7 > /dev/null
 Scanning processes...     
 Scanning linux images...
 $ sudo pip3 install -r /usr/local/pi-oled/requirements.txt
