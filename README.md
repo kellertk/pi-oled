@@ -58,6 +58,16 @@ $ sudo pip3 install -r /usr/local/pi-oled/requirements.txt
 ...lots of output...
 $ PYTHONPATH=/usr/local/pi-oled python3 -m pi_oled
 ```
+
+An example systemd unit is in [pi-oled.service](./pi-oled.service). Install it 
+to `/etc/systemd/system/`, then
+
+```bash
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable pi-oled --now
+Created symlink /etc/systemd/system/multi-user.target.wants/pi-oled.service → /etc/systemd/system/pi-oled.service.
+```
+
 This is not the way you're supposed to install Python packages, but it will work
 in a pinch. Good luck!
 

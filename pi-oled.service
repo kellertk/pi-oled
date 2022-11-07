@@ -1,0 +1,11 @@
+[Unit]
+Description=Pi OLED display
+After=multi-user.target
+
+[Service]
+Type=simple
+Environment=PYTHONPATH=/usr/local/pi-oled
+ExecStart=/usr/bin/python3 -m pi_oled
+
+[Install]
+WantedBy=multi-user.target
