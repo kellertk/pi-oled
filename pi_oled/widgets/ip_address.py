@@ -6,7 +6,7 @@ import ifaddr
 
 class ip_address(snapshot):
     def __init__(self, width: int, height: int, update_interval=0.25, scroll_speed=3.0, ip_check_interval=1.0,
-                 exclude_adapters: Union[List[str], None] = None):
+                 exclude_adapters: Union[List[str], None] = ['lo', 'docker', 'veth', 'tun', 'tap', 'br']):
         self._speed = scroll_speed
         self._ip_address_interval = ip_check_interval
         self.interval = update_interval
@@ -23,12 +23,12 @@ class ip_address(snapshot):
             self._scroller.text = self._ip_address
             return True
         else:
-            return super().should_redraw()
+            return super(ip_address, self).should_redraw()
 
     def check_ip_address(self):
         if perf_counter() - self._last_updated > self._ip_address_interval:
             # always exclude loopback adapter
-            _adapters = list(filter(lambda e: e.name != 'lo', list(ifaddr.get_adapters())))
+            _adapters = list(filter(lambda e: e.name not in self._exclude_adapters, list(ifaddr.get_adapters())))
             _ips: List[str] = list(filter(lambda e: e is not None,
                                           map(lambda e: str(e.ips[0].ip)
                                               if not any(x in e.name for x in self._exclude_adapters) else None,
