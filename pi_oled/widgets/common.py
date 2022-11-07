@@ -1,4 +1,4 @@
-from typing import Literal, Union
+from typing import Union
 from PIL import ImageFont, ImageDraw, Image
 from pathlib import Path
 from luma.core.virtual import viewport
@@ -106,7 +106,7 @@ class LineGraph():
 
 
 class viewport_custom(viewport):
-    def __init__(self, device: device, width: int, height: int, mode: Literal["1", "RGB", "RGBA", None]=None,
+    def __init__(self, device: device, width: int, height: int, mode=None,
                  dither=False, backing_image: Union[Image.Image, None] = None):
         super(viewport_custom, self).__init__(device, width, height, mode, dither)
         if backing_image is not None:
