@@ -34,7 +34,7 @@ hostname, IP addresses, and interface connectivity.
 Installation
 ---
 This code isn't really meant to be downloaded and installed directly. You should
-take a look at what's in (pi_oled/__main__.py)[./pi_oled/__main__.py] and see
+take a look at what's in [pi_oled/\_\_main\_\_.py](./pi_oled/__main__.py) and see
 how I'm creating the display, and do something like that for yourself. You can
 also create widgets, change the font, etc. Use this as a base for your own
 project :)
