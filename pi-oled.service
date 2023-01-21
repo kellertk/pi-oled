@@ -6,6 +6,7 @@ After=multi-user.target
 Type=simple
 Environment=PYTHONPATH=/usr/local/pi-oled
 ExecStart=/usr/bin/python3 -m pi_oled
+Nice=19
 
 [Install]
 WantedBy=multi-user.target
